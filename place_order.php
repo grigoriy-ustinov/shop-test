@@ -4,7 +4,7 @@ require_once('database.php');
 function add_items_per_orders($type, $item, $orderId, $pdo){
     $stmt = $pdo->prepare('INSERT INTO items_per_orders (order_id, item_id, item_type, quantity) VALUES (:order_id, :item_id, :item_type, :quantity)');
     $stmt->execute(['order_id' => $orderId, 'item_id' => $item['id'], 'item_type' => $type, 'quantity' => $item['quantity']]);
-    echo "<p>Adding ".$type. " with id ". $item['id'] . " with quantity " . $item['quantity'] . " to orderId " .$orderId; 
+    //echo "<p>Adding ".$type. " with id ". $item['id'] . " with quantity " . $item['quantity'] . " to orderId " .$orderId; 
 }
 
 //Create orders insert and get its id
@@ -35,7 +35,7 @@ if(!empty($_POST['name'])){
     }
 }
 
-print("<pre>".print_r($_SESSION,true)."</pre>");
+//print("<pre>".print_r($_SESSION,true)."</pre>");
 unset($_SESSION['cpu_list']);
 unset($_SESSION['ram_list']);
 unset($_SESSION['screen_list']);
