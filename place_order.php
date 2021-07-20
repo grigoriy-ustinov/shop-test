@@ -41,5 +41,5 @@ unset($_SESSION['ram_list']);
 unset($_SESSION['screen_list']);
 $_SESSION['cart_count'] = 0;
 
-//header('Location:index.php');
-//exit();
+header('Location:index.php');
+exit();
